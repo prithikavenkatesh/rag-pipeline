@@ -1,32 +1,36 @@
 
+
 # Semantic Search Module
 
-This module is part of the `rag-pipeline` project and is responsible for handling semantic search over PDF documents. It includes the following components:
+This folder is part of the `rag-pipeline` project. It contains code for searching PDF documents based on meaning, not just keywords.
 
-## 📄 PDF Ingestion & Paragraph Extraction
-- Uses `PyMuPDF` to extract text from PDF files.
-- Splits the text into paragraphs and truncates long ones to maintain consistency.
+## What It Does
 
-## 🔍 Semantic Embedding
-- Utilizes `sentence-transformers` (specifically `all-MiniLM-L6-v2`) to generate semantic embeddings for each paragraph.
-- Embeddings capture contextual meaning, enabling semantic search beyond keyword matching.
+1. **Extracts paragraphs from PDFs**
+   - Uses PyMuPDF to read and split text into paragraphs.
 
-## 🧠 Vector Storage in Milvus
-- Stores paragraph embeddings and their corresponding text in a Milvus vector database.
-- Creates an IVF_FLAT index for efficient similarity search.
+2. **Generates semantic embeddings**
+   - Uses the `sentence-transformers` model to turn paragraphs into vectors that capture meaning.
 
-## 🔎 Semantic Search
-- Accepts a natural language query.
-- Embeds the query and retrieves the top matching paragraphs from Milvus based on semantic similarity.
+3. **Stores data in Milvus**
+   - Embeddings and text are saved in a Milvus vector database.
+   - An index is created for fast searching.
 
-## 📘 Sample PDF
-- The included PDF (`ST_SGB_2019_7-EN.pdf`) is a publicly available UN environmental policy document.
-- It serves as a sample for demonstrating semantic search capabilities.
+4. **Performs semantic search**
+   - You can enter a question or phrase.
+   - The system finds the most relevant paragraphs based on meaning.
 
-## 🚀 Future Plans
-- Integration with LLMs (e.g., Qwen, DeepSeek) to generate answers based on retrieved content.
-- Expansion to support multiple document sources and chunking strategies.
+## Sample PDF
+
+- The included PDF is a public UN environmental policy document.
+- It’s used to demonstrate how semantic search works.
+
+## Future Plans
+
+- Add LLMs like Qwen or DeepSeek to generate answers from retrieved content.
+- Support more document types and smarter chunking.
 
 ---
 
-This module is designed to be modular and extensible, forming the foundation of a Retrieval
+This module is designed to be modular and easy to extend as part of a larger Retrieval-Augmented Generation (RAG) system.
+
