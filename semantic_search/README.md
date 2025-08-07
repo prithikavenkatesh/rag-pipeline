@@ -22,8 +22,9 @@ This folder is part of the `rag-pipeline` project. It contains code for searchin
 
 ## Sample PDF
 
-- The included PDF is a public UN environmental policy document.
+- The included PDF (ST_SGB_2019_7-EN.pdf) is a public UN environmental policy document.
 - It’s used to demonstrate how semantic search works.
+- Source: UN Digital Library (https://digitallibrary.un.org/record/3827063?v=pdf#files)
 
 ## Future Plans
 
